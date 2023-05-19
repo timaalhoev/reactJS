@@ -12,14 +12,17 @@
     width: 100%;
     margin-top: 12px;
   }
+  &__popup {
+    &-colors {
+      margin-top: 12px;
+      display: flex;
+      justify-content: space-between;
 
-  &-colors {
-    margin-top: 12px;
-
-    .badge {
-      width: 20px;
-      height: 20px;
-      position: static;
+      .badge {
+        width: 20px;
+        height: 20px;
+        position: static;
+      }
     }
   }
 }
