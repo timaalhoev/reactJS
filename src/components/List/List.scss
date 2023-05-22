@@ -17,6 +17,10 @@
     cursor: pointer;
     padding: 10px 12px;
 
+    &:hover {
+      background: rgba(249, 252, 254, 0.8);
+    }
+
     &.active {
       background: #ffffff;
       box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.04);

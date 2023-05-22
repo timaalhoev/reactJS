@@ -7,21 +7,37 @@
     border-radius: 10px;
     padding: 18px;
     box-sizing: border-box;
-  }
-  .button {
-    width: 100%;
-    margin-top: 12px;
-  }
-  &__popup {
+    position: relative;
+    top: -25px;
+    left: 10px;
+
+    .button {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    &-close-btn {
+      position: absolute;
+      cursor: pointer;
+      right: -8px;
+      top: -8px;
+    }
+
     &-colors {
       margin-top: 12px;
       display: flex;
       justify-content: space-between;
 
       .badge {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         position: static;
+        cursor: pointer;
+        border: 2px solid transparent;
+
+        &.active {
+          border: 2px solid #525252;
+        }
       }
     }
   }
