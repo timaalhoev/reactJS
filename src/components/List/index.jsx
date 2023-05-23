@@ -5,6 +5,12 @@ import Badge from "../Badge";
 import removeSvg from "../../assets/img/remove.svg";
 
 const List = ({ items, isRemovable, onClick, onRemove }) => {
+  const removeList = (item) => {
+    if (window.confirm("Вы действительно хотите удалить список")) {
+      onRemove(item);
+    }
+  };
+
   return (
     <ul onClick={onClick} className="list">
       {items.map((item, index) => (
@@ -19,7 +25,7 @@ const List = ({ items, isRemovable, onClick, onRemove }) => {
               className="list__remove-icon"
               src={removeSvg}
               alt="Remove svg"
-              onClick={onRemove}
+              onClick={() => removeList(item)}
             />
           )}
         </li>

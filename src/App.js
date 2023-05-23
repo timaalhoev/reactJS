@@ -44,8 +44,8 @@ function App() {
         />
         <List
           items={lists}
-          onRemove={() => {
-            alert(1);
+          onRemove={(item) => {
+            console.log(item);
           }}
           isRemovable
         />
