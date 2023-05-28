@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import List from "./components/List";
 import AddList from "./components/AddList";
 import db from "./assets/db.json";
+import Tasks from "./components/Tasks";
 
 function App() {
   const [lists, setLists] = useState(
@@ -51,7 +52,9 @@ function App() {
         />
         <AddList onAdd={onAddList} colors={db.colors} />
       </div>
-      <div className="todo__tasks"></div>
+      <div className="todo__tasks">
+        <Tasks />
+      </div>
     </div>
   );
 }

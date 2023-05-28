@@ -13,6 +13,7 @@ body {
 }
 
 .todo {
+  display: flex;
   font-size: 14px;
   position: absolute;
   left: 50%;
@@ -30,6 +31,11 @@ body {
     height: calc(100% - 120px);
     border-right: 1px solid #f1f1f1;
     padding: 60px 20px;
+  }
+
+  &__tasks {
+    flex: 1;
+    padding: 47px;
   }
 }
 
