@@ -24,6 +24,16 @@
       "id": 5,
       "name": "Личное",
       "colorId": 1
+    },
+    {
+      "name": "спорт",
+      "colorId": 3,
+      "id": 6
+    },
+    {
+      "name": "111",
+      "colorId": 7,
+      "id": 7
     }
   ],
   "tasks": [
@@ -31,7 +41,7 @@
       "id": 1,
       "listId": 2,
       "text": "Изучить JavaScript",
-      "completed": true
+      "completed": false
     },
     {
       "id": 2,
