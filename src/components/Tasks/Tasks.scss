@@ -23,15 +23,59 @@
       }
     }
   }
+  &__form {
+    margin-top: 20px;
+
+    &-block {
+      .button {
+        margin-right: 10px;
+        margin-top: 15px;
+      }
+    }
+    &-new {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      transition: opacity 0.15s ease-in-out;
+
+      &:hover {
+        opacity: 0.6;
+      }
+
+      img {
+        margin-left: 5px;
+      }
+      span {
+        font-size: 16px;
+        margin-left: 19px;
+        opacity: 0.4;
+      }
+    }
+  }
 
   &__items {
     margin-top: 30px;
+
+    h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+      font-weight: bold;
+      font-family: Montserrat;
+      color: #c9d1d3;
+      // position: absolute;
+      // left: 50%;
+      // right: 50%;
+    }
     &-row {
       display: flex;
       align-items: center;
+      margin-bottom: 15px;
 
-      p {
+      input {
         margin-left: 15px;
+        border: 0;
+        font-style: 16px;
+        width: 100%;
       }
     }
   }

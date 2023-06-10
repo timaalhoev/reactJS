@@ -28,6 +28,11 @@
 
     span {
       flex: 1;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      width: 160px;
+      height: 1.2em;
+      white-space: nowrap;
     }
     &:hover {
       background: rgba(249, 252, 254, 0.8);

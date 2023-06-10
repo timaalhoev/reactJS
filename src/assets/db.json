@@ -26,7 +26,7 @@
       "colorId": 1
     },
     {
-      "name": "спорт",
+      "name": "Спорт",
       "colorId": 3,
       "id": 6
     },
@@ -60,6 +60,38 @@
       "listId": 2,
       "text": "Redux (redux-observable, redux-saga)",
       "completed": false
+    },
+    {
+      "text": "sesh",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "text": "sesh",
+      "completed": false,
+      "id": 6
+    },
+    {
+      "text": "sesh",
+      "completed": false,
+      "id": 7
+    },
+    {
+      "text": "sesh",
+      "completed": false,
+      "id": 8
+    },
+    {
+      "listId": 2,
+      "text": "sesh",
+      "completed": false,
+      "id": 9
+    },
+    {
+      "listId": 2,
+      "text": "mkk",
+      "completed": false,
+      "id": 10
     }
   ],
   "colors": [
