@@ -24,14 +24,14 @@ const AddList = ({ colors, onAdd }) => {
     selectColor(colors[0].id);
   };
 
-  const addList = () => {
+  const addList = async () => {
     if (!inputValue) {
       alert("Введите названиие списка");
       return;
     }
 
     setIsLoading(true);
-    axios
+    await axios
       .post("http://localhost:3001/lists", {
         name: inputValue,
         colorId: selectedColor,

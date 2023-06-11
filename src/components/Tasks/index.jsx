@@ -7,11 +7,11 @@ import editSvg from "../../assets/img/edit.svg";
 import AddTaskForm from "./AddTaskForm";
 
 const Tasks = ({ list, onEditTitle, onAddTask }) => {
-  const editTitle = () => {
+  const editTitle = async () => {
     const newTitle = window.prompt("Название списка", list.name);
     if (newTitle) {
       onEditTitle(list.id, newTitle);
-      axios
+      await axios
         .patch("http://localhost:3001/lists/" + list.id, {
           name: newTitle,
         })

@@ -10,14 +10,14 @@ const AddTaskForm = ({ list, onAddTask }) => {
     setFormVisible(!visibleForm);
     setInputValue("");
   };
-  const addTask = () => {
+  const addTask = async () => {
     const obj = {
       listId: list.id,
       text: inputValue,
       completed: false,
     };
     setIsLoading(true);
-    axios
+    await axios
       .post("http://localhost:3001/tasks", obj)
       .then(({ data }) => {
         console.log(data, list);

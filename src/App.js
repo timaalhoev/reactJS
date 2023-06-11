@@ -8,14 +8,18 @@ function App() {
   const [activeItem, setActiveItem] = useState(null);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3001/lists?_expand=color&_embed=tasks")
-      .then(({ data }) => {
-        setLists(data);
+    async function fetchData () {
+      await axios
+        .get("http://localhost:3001/lists?_expand=color&_embed=tasks")
+        .then(({ data }) => {
+          setLists(data);
+        });
+      await axios.get("http://localhost:3001/colors").then(({ data }) => {
+        setColors(data);
       });
-    axios.get("http://localhost:3001/colors").then(({ data }) => {
-      setColors(data);
-    });
+    };
+
+    fetchData();
   }, []);
 
   const onAddList = (obj) => {

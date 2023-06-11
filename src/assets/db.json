@@ -92,6 +92,12 @@
       "text": "mkk",
       "completed": false,
       "id": 10
+    },
+    {
+      "listId": 2,
+      "text": "Выучить JS",
+      "completed": false,
+      "id": 11
     }
   ],
   "colors": [
