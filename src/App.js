@@ -47,6 +47,7 @@ function App() {
         <List
           items={[
             {
+              active: true,
               icon: (
                 <svg
                   width="18"
@@ -62,7 +63,6 @@ function App() {
                 </svg>
               ),
               name: "Все задачи",
-              active: true,
             },
           ]}
         />

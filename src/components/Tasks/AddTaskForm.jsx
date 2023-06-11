@@ -5,7 +5,7 @@ import axios from "axios";
 const AddTaskForm = ({ list, onAddTask }) => {
   const [visibleForm, setFormVisible] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  // const [inputValue, setInputValue] = useState("");
+  const [isLoading, setIsLoading] = useState("");
   const toggleFormVisible = () => {
     setFormVisible(!visibleForm);
     setInputValue("");
@@ -16,6 +16,7 @@ const AddTaskForm = ({ list, onAddTask }) => {
       text: inputValue,
       completed: false,
     };
+    setIsLoading(true);
     axios
       .post("http://localhost:3001/tasks", obj)
       .then(({ data }) => {
@@ -23,7 +24,12 @@ const AddTaskForm = ({ list, onAddTask }) => {
         onAddTask(list.id, obj);
         toggleFormVisible();
       })
-      .catch(() => console.log("error"));
+      .catch(() => {
+        alert("Ошиибка при добавлении задачи");
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
   return (
     <div className="tasks__form">
@@ -41,8 +47,8 @@ const AddTaskForm = ({ list, onAddTask }) => {
             type="text"
             placeholder="Текст задачи"
           ></input>
-          <button onClick={addTask} className="button">
-            Добавить Задачу
+          <button disabled={isLoading} onClick={addTask} className="button">
+            {isLoading ? "Добавление.." : "Добавить задачу"}
           </button>
           <button onClick={toggleFormVisible} className="button button--grey">
             Отмена
