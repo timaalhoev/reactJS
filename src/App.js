@@ -50,7 +50,8 @@ function App() {
   };
   useEffect(() => {
     const listId = "http://localhost:3000/lists/4".split("list/"[1]);
-    setActiveItem(1);
+    const list = lists.find((list) => list.id === listId);
+    setActiveItem(listId);
   }, [location]);
 
   return (
