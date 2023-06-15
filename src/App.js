@@ -4,11 +4,11 @@ import { List, AddList, Tasks } from "./components";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [lists, setLists] = useState(null);
   const [colors, setColors] = useState(null);
   const [activeItem, setActiveItem] = useState(null);
-  const navigate = useNavigate();
-  const location = useLocation();
 
   useEffect(() => {
     async function fetchData() {
@@ -48,11 +48,14 @@ function App() {
     });
     setLists(newList);
   };
+
   useEffect(() => {
-    const listId = "http://localhost:3000/lists/4".split("list/"[1]);
-    const list = lists.find((list) => list.id === listId);
-    setActiveItem(listId);
-  }, [location]);
+    const listId = location.pathname.split("lists/")[1];
+    if (lists) {
+      const list = lists.find((list) => list.id === Number(listId));
+      setActiveItem(list);
+    }
+  }, [location.pathname, lists]);
 
   return (
     <div className="todo">
